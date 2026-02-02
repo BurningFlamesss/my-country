@@ -57,30 +57,41 @@ body {
 }
 
 .first-triangle {
-    background-image: url('/public/himal.svg');
+    background-color: rgba(0, 0, 0, 1);
+
 }
 
 .second-triangle {
-    background-image: url('/public/pahad.svg');
+    background-color: rgba(0, 0, 0, 1);
 }
 
 .first-triangle .triangle-image {
-    background-color: rgba(255, 0, 0, 0.5);
+    background-image: url('/public/moon.svg');
     clip-path: polygon(0 100%, 0 0, 100% 100%);
     z-index: 1;
 }
 
 .second-triangle .triangle-image {
-    background-color: rgba(255, 0, 0, 0.5);
+    background-image: url('/public/sun.svg');
     clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
     z-index: 1;
 }
 
-
-.first-triangle:hover .triangle-image, .second-triangle:hover .triangle-image {
-    background-color: rgba(255, 0, 0, 0.25);
-}
-
 .first-triangle:hover .symbol, .second-triangle:hover .symbol {
     opacity: 1;
+}
+
+.flag-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/public/terai.svg');
+}
+
+.slogan {
+    z-index: 10;
+    font-size: 3rem;
+    font-weight: 900;
+
 }
