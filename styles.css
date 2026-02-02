@@ -13,7 +13,7 @@ body {
     width: 99vw;
     height: 300vh;
     border-left: 30px solid #003893;
-    background: #dc143c;
+    background: rgba(255, 0, 0, 0.5);
     overflow: hidden;
 }
 
@@ -32,18 +32,17 @@ body {
 
 .symbol {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 120px;
-    transform: translate(-50%, -50%) scale(0);
+    inset: 0;
+    width: 100%;
+    opacity: 0;
     transition: 0.4s ease;
-    z-index: 2;
+    z-index: 0;
 }
 
 .section {
     position: relative;
     height: 100vh;
-    background: white;
+    background: transparent;
     overflow: hidden;
 }
 
@@ -57,13 +56,31 @@ body {
     background-position: center;
 }
 
-.first-triangle .triangle-image {
+.first-triangle {
     background-image: url('/public/himal.svg');
-    clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.second-triangle {
+    background-image: url('/public/pahad.svg');
+}
+
+.first-triangle .triangle-image {
+    background-color: rgba(255, 0, 0, 0.5);
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+    z-index: 1;
 }
 
 .second-triangle .triangle-image {
-    background-image: url('/public/pahad.svg');
+    background-color: rgba(255, 0, 0, 0.5);
     clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
+    z-index: 1;
+}
 
+
+.first-triangle:hover .triangle-image, .second-triangle:hover .triangle-image {
+    background-color: rgba(255, 0, 0, 0.25);
+}
+
+.first-triangle:hover .symbol, .second-triangle:hover .symbol {
+    opacity: 1;
 }
