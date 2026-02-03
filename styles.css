@@ -11,15 +11,9 @@ body {
 
 .flag {
     width: 99vw;
-    height: 300vh;
+    height: 200vh;
     border-left: 30px solid #003893;
     background: rgba(255, 0, 0, 0.5);
-    overflow: hidden;
-}
-
-.section {
-    position: relative;
-    height: 100vh;
     overflow: hidden;
 }
 
@@ -41,7 +35,7 @@ body {
 
 .section {
     position: relative;
-    height: 100vh;
+    height: 50vh;
     background: transparent;
     overflow: hidden;
 }
@@ -75,13 +69,23 @@ body {
     background-image: url('/public/sun.svg');
     clip-path: polygon(0 0, 50% 0, 100% 100%, 0% 100%);
     z-index: 1;
-}
-
-.first-triangle:hover .symbol, .second-triangle:hover .symbol {
     opacity: 1;
 }
 
+.first-triangle:hover .symbol,
+.second-triangle:hover .symbol {
+    opacity: 1;
+}
+
+.first-triangle:hover .triangle-image,
+.second-triangle:hover .triangle-image {
+    opacity: 0;
+    transition: opacity 4s ease;
+
+}
+
 .flag-end {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -93,5 +97,4 @@ body {
     z-index: 10;
     font-size: 3rem;
     font-weight: 900;
-
 }
