@@ -13,7 +13,7 @@ body {
     width: 99vw;
     height: 200vh;
     border-left: 30px solid #003893;
-    background: rgba(255, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 1);
     overflow: hidden;
 }
 
@@ -80,7 +80,7 @@ body {
 .first-triangle:hover .triangle-image,
 .second-triangle:hover .triangle-image {
     opacity: 0;
-    transition: opacity 4s ease;
+    transition: opacity 2s ease-in-out 1s;
 
 }
 
@@ -90,11 +90,37 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('/public/terai.svg');
+    position: relative;
+}
+
+.flag-end img {
+    position: absolute;
+    inset: 0;
+}
+
+.himal-img {
+    transform: translateY(100%);
+    transition: 2s ease-in-out;
+}
+
+.pahad-img {
+    transform: translateY(50%);
+    transition: 1s ease-in-out;
+}
+
+.flag-end:hover .himal-img,.flag-end:hover .pahad-img {
+    transform: translateY(0);
+}
+
+.himal-img {
+    top: -15% !important;
 }
 
 .slogan {
+    position: absolute;
+    top: 0;
     z-index: 10;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 900;
+    color: white;
 }
